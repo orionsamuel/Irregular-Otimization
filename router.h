@@ -468,6 +468,18 @@ SC_MODULE(router){
 		}
 
 
+		if((out_port[3].type > 0) && (out_port[3].type < 3)){
+			count_rd = 1;
+		}else if((out_port[3].type == 3) && (count_rd == 1)){
+			if(out_port[3].priority == 1){
+				count = count + 1;
+			}
+			
+			latencia_rt = sc_time_stamp();
+			count_rd = 0;
+		}
+
+
 		if(out_portEN.type != 0){
 			out_port[0] = out_portEN;
 		}
@@ -491,6 +503,18 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
+			latencia_rt = sc_time_stamp();
+			count_rd = 0;
+		}
+
+
+		if((out_port[3].type > 0) && (out_port[3].type < 3)){
+			count_rd = 1;
+		}else if((out_port[3].type == 3) && (count_rd == 1)){
+			if(out_port[3].priority == 1){
+				count = count + 1;
+			}
+			
 			latencia_rt = sc_time_stamp();
 			count_rd = 0;
 		}
@@ -524,6 +548,18 @@ SC_MODULE(router){
 		}
 
 
+		if((out_port[3].type > 0) && (out_port[3].type < 3)){
+			count_rd = 1;
+		}else if((out_port[3].type == 3) && (count_rd == 1)){
+			if(out_port[3].priority == 1){
+				count = count + 1;
+			}
+			
+			latencia_rt = sc_time_stamp();
+			count_rd = 0;
+		}
+
+
 		if(out_portWN.type != 0){
 			out_port[0] = out_portWN;
 		}
@@ -549,6 +585,18 @@ SC_MODULE(router){
 		}
 
 
+		if((out_port[3].type > 0) && (out_port[3].type < 3)){
+			count_rd = 1;
+		}else if((out_port[3].type == 3) && (count_rd == 1)){
+			if(out_port[3].priority == 1){
+				count = count + 1;
+			}
+			
+			latencia_rt = sc_time_stamp();
+			count_rd = 0;
+		}
+
+
 		if(out_portLN.type != 0){
 			out_port[0] = out_portLN;
 		}if(out_portLE.type != 0){
@@ -568,6 +616,18 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
+			latencia_rt = sc_time_stamp();
+			count_rd = 0;
+		}
+
+
+		if((out_port[3].type > 0) && (out_port[3].type < 3)){
+			count_rd = 1;
+		}else if((out_port[3].type == 3) && (count_rd == 1)){
+			if(out_port[3].priority == 1){
+				count = count + 1;
+			}
+			
 			latencia_rt = sc_time_stamp();
 			count_rd = 0;
 		}

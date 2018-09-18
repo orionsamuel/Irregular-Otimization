@@ -20,6 +20,7 @@ SC_MODULE(NoC){
 	int prioridade;
 	int router_num;
 	int r1, r2;
+	int real_time;
 
 	trafego_rede trafego;
 
@@ -247,6 +248,9 @@ SC_MODULE(NoC){
 					rt[i]->in_val[4].write(1);
 					for(int k = 0; k < trafego[j].pacotes; k++){
 						prioridade = 1 + (rand() % 2);
+						if(prioridade == 1){
+							real_time = real_time + 1;
+						}
 						for(int l = 0; l < 5; l++){
 							if(l == 0){
 								rt[i]->in_port[4].type = BEGIN_PACKET;
@@ -889,7 +893,7 @@ int sc_main (int argc, char* argv[]){
 
 					string simulacao = "_saida_simulacao.txt";
 
-					deadline = (deadline_parcial * 100) / total_packets;
+					deadline = (deadline_parcial * 100) / rede.real_time;
 					latencia_media = (latencia_parcial / total_packets);
 					if(deadline > 100){
 						deadline = 100;
