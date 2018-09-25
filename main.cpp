@@ -224,7 +224,7 @@ SC_MODULE(NoC){
 			}
 		}else if((r1 == 1) && (r2 == 9)){
 			for (int i = 0; i < router_num; i++){
-				if(i < 9){
+				if(i < 1){
 					rt[i]->tabela = table[i];
 				}else{
 					rt2[i]->tabela = table[i];
@@ -232,7 +232,7 @@ SC_MODULE(NoC){
 			}
 		}else if((r1 == 0) && (r2 == 10)){
 			for (int i = 0; i < router_num; i++){
-				if(i < 10){
+				if(i < 0){
 					rt[i]->tabela = table[i];
 				}else{
 					rt2[i]->tabela = table[i];
