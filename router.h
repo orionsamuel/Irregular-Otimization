@@ -18,7 +18,7 @@ SC_MODULE(router){
 	sc_int<32> count;
 	sc_int<32> count_rd;
 
-	sc_time latencia_rt;
+	sc_time latencia_rt, zera_latencia;
 
 	sc_in<bool> clk;
 
@@ -463,7 +463,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;
 			count_rd = 0;
 		}
 
@@ -475,7 +475,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -503,7 +503,7 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -515,7 +515,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -543,7 +543,7 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -555,7 +555,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -580,7 +580,7 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -592,7 +592,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -616,7 +616,7 @@ SC_MODULE(router){
 			if(out_port[4].priority == 1){
 				count = count + 1;
 			}
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 
@@ -628,7 +628,7 @@ SC_MODULE(router){
 				count = count + 1;
 			}
 			
-			latencia_rt = sc_time_stamp();
+			latencia_rt = sc_time_stamp() - zera_latencia;;
 			count_rd = 0;
 		}
 		

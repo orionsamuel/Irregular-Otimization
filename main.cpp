@@ -58,14 +58,7 @@ SC_MODULE(NoC){
 				rt[(conexoes_rede[i].segundo)-1]->in_val[2].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[0]);
 				router_count[(conexoes_rede[i].primeiro)-1]++;
 				router_count[(conexoes_rede[i].segundo)-1]++;
-			}/*else if((router_count[(conexoes_rede[i].primeiro)-1] == 0) && (router_count[(conexoes_rede[i].segundo)-1] == 3)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[0] = rt[(conexoes_rede[i].segundo)-1]->out_port[3];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[0].write(rt[(conexoes_rede[i].segundo)-1]->out_val[3]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[3] = rt[(conexoes_rede[i].primeiro)-1]->out_port[0];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[3].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[0]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}*/else if((router_count[(conexoes_rede[i].primeiro)-1] == 1) && (router_count[(conexoes_rede[i].segundo)-1] == 0)){
+			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 1) && (router_count[(conexoes_rede[i].segundo)-1] == 0)){
 				rt[(conexoes_rede[i].primeiro)-1]->in_port[1] = rt[(conexoes_rede[i].segundo)-1]->out_port[0];
 				rt[(conexoes_rede[i].primeiro)-1]->in_val[1].write(rt[(conexoes_rede[i].segundo)-1]->out_val[0]);
 				rt[(conexoes_rede[i].segundo)-1]->in_port[0] = rt[(conexoes_rede[i].primeiro)-1]->out_port[1];
@@ -86,14 +79,7 @@ SC_MODULE(NoC){
 				rt[(conexoes_rede[i].segundo)-1]->in_val[2].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[1]);
 				router_count[(conexoes_rede[i].primeiro)-1]++;
 				router_count[(conexoes_rede[i].segundo)-1]++;
-			}/*else if((router_count[(conexoes_rede[i].primeiro)-1] == 1) && (router_count[(conexoes_rede[i].segundo)-1] == 3)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[1] = rt[(conexoes_rede[i].segundo)-1]->out_port[3];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[1].write(rt[(conexoes_rede[i].segundo)-1]->out_val[3]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[3] = rt[(conexoes_rede[i].primeiro)-1]->out_port[1];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[3].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[1]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}*/else if((router_count[(conexoes_rede[i].primeiro)-1] == 2) && (router_count[(conexoes_rede[i].segundo)-1] == 0)){
+			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 2) && (router_count[(conexoes_rede[i].segundo)-1] == 0)){
 				rt[(conexoes_rede[i].primeiro)-1]->in_port[2] = rt[(conexoes_rede[i].segundo)-1]->out_port[0];
 				rt[(conexoes_rede[i].primeiro)-1]->in_val[2].write(rt[(conexoes_rede[i].segundo)-1]->out_val[0]);
 				rt[(conexoes_rede[i].segundo)-1]->in_port[0] = rt[(conexoes_rede[i].primeiro)-1]->out_port[2];
@@ -114,42 +100,7 @@ SC_MODULE(NoC){
 				rt[(conexoes_rede[i].segundo)-1]->in_val[2].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[2]);
 				router_count[(conexoes_rede[i].primeiro)-1]++;
 				router_count[(conexoes_rede[i].segundo)-1]++;
-			}/*else if((router_count[(conexoes_rede[i].primeiro)-1] == 2) && (router_count[(conexoes_rede[i].segundo)-1] == 3)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[2] = rt[(conexoes_rede[i].segundo)-1]->out_port[3];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[2].write(rt[(conexoes_rede[i].segundo)-1]->out_val[3]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[3] = rt[(conexoes_rede[i].primeiro)-1]->out_port[2];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[3].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[2]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 3) && (router_count[(conexoes_rede[i].segundo)-1] == 0)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[3] = rt[(conexoes_rede[i].segundo)-1]->out_port[0];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[3].write(rt[(conexoes_rede[i].segundo)-1]->out_val[0]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[0] = rt[(conexoes_rede[i].primeiro)-1]->out_port[3];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[0].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[3]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 3) && (router_count[(conexoes_rede[i].segundo)-1] == 1)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[3] = rt[(conexoes_rede[i].segundo)-1]->out_port[1];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[3].write(rt[(conexoes_rede[i].segundo)-1]->out_val[1]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[1] = rt[(conexoes_rede[i].primeiro)-1]->out_port[3];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[1].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[3]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 3) && (router_count[(conexoes_rede[i].segundo)-1] == 2)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[3] = rt[(conexoes_rede[i].segundo)-1]->out_port[2];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[3].write(rt[(conexoes_rede[i].segundo)-1]->out_val[2]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[2] = rt[(conexoes_rede[i].primeiro)-1]->out_port[3];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[2].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[3]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}else if((router_count[(conexoes_rede[i].primeiro)-1] == 3) && (router_count[(conexoes_rede[i].segundo)-1] == 3)){
-				rt[(conexoes_rede[i].primeiro)-1]->in_port[3] = rt[(conexoes_rede[i].segundo)-1]->out_port[3];
-				rt[(conexoes_rede[i].primeiro)-1]->in_val[3].write(rt[(conexoes_rede[i].segundo)-1]->out_val[3]);
-				rt[(conexoes_rede[i].segundo)-1]->in_port[3] = rt[(conexoes_rede[i].primeiro)-1]->out_port[3];
-				rt[(conexoes_rede[i].segundo)-1]->in_val[3].write(rt[(conexoes_rede[i].primeiro)-1]->out_val[3]);
-				router_count[(conexoes_rede[i].primeiro)-1]++;
-				router_count[(conexoes_rede[i].segundo)-1]++;
-			}*/
+			}
 		}
 	}
 
@@ -362,7 +313,7 @@ int sc_main (int argc, char* argv[]){
 
 	float deadline_parcial, deadline;
 	int total_packets;
-	sc_time latencia_parcial, latencia_media;
+	sc_time latencia_parcial, latencia_media, zera_latencia;
 	sc_time conste(0, SC_NS);
 
 	ifstream arquivoTrafego;
@@ -425,41 +376,60 @@ int sc_main (int argc, char* argv[]){
 	arquivoTrafego.close();
 
 	int router_num = coreNumbers;
-	int r1 = router_num;
-	int r2 = 0;
 
 
 	gene.coreNumbers = coreNumbers;
 	gene.router_num = router_num;
+	gene.r1 = router_num;
+	gene.r2 = 0;
 
 	//gene.firstPopulation();
 
 	rede.coreNumbers = coreNumbers;
 	rede.trafego = trafego;
+
+	int contGene = 1;
 	
 
 	for(int c = 0; c < (coreNumbers/2); c++){
+		gene.router_num = router_num;
 		gene.firstPopulation();
 
-		for(int d = 0; d <= router_num; d++){
-			rede.r1 = r1;
-			rede.r2 = r2;
 
 
-			//Inicio do genético
-			for(int b = 0; b < 50; b++){
-				rede.router_num = router_num;
-				for(int a = 0; a < SIZE_POPULATION; a++){
-					cout << b << endl;
-					rede.conexoes_rede = gene.conexoes_rede[a];
+		//Inicio do genético
+		for(int b = 0; b < 50; b++){
+			rede.router_num = router_num;
+			for(int a = 0; a < SIZE_POPULATION; a++){
 
-					//Mapeamento dos roteadores
-					if(router_num == coreNumbers){
-						for(int j = 0; j < router_num; j++){
+				if(contGene > router_num){
+					contGene = 1;
+					gene.r1 = router_num;
+					gene.r2 = 0;
+				}
+
+
+				gene.routers();
+
+				rede.r1 = gene.r1;
+				rede.r2 = gene.r2;
+
+				cout << router_num <<"_" << b << "_" << a << endl;
+				rede.conexoes_rede = gene.conexoes_rede[a];
+
+				//Mapeamento dos roteadores
+				if(router_num == coreNumbers){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							rede.rt[j]->position = j + 1;
-						}						
-					}else if(router_num == (coreNumbers - 1)){
-						for(int j = 0; j < router_num; j++){
+						}
+						for(int n = 0; n < gene.r2; n++){
+							rede.rt2[j]->position = j + 1;
+						}
+					}						
+				}else if(router_num == (coreNumbers - 1)){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							if(j == 0){
 								rede.rt[j]->position = j+1;
 								rede.rt[j]->position2 = j+2;
@@ -467,8 +437,18 @@ int sc_main (int argc, char* argv[]){
 								rede.rt[j]->position = j + 2;
 							}
 						}
-					}else if(router_num == (coreNumbers - 2)){
-						for(int j = 0; j < router_num; j++){
+						for(int n = 0; n < gene.r2; n++){
+							if(j == 0){
+								rede.rt2[j]->position = j+1;
+								rede.rt2[j]->position2 = j+2;
+							}else{
+								rede.rt2[j]->position = j + 2;
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 2)){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							if(j == 0){
 								rede.rt[j]->position = j+1;
 								rede.rt[j]->position2 = j+2;
@@ -479,8 +459,21 @@ int sc_main (int argc, char* argv[]){
 								rede.rt[j]->position = j + 3;
 							}
 						}
-					}else if(router_num == (coreNumbers - 3)){
-						for(int j = 0; j < router_num; j++){
+						for(int n = 0; n < gene.r2; n++){
+							if(j == 0){
+								rede.rt2[j]->position = j+1;
+								rede.rt2[j]->position2 = j+2;
+							}else if(j == 1){
+								rede.rt2[j]->position = j+2;
+								rede.rt2[j]->position2 = j+3;
+							}else{
+								rede.rt2[j]->position = j + 3;
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 3)){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							if(j == 0){
 								rede.rt[j]->position = j+1;
 								rede.rt[j]->position2 = j+2;
@@ -494,8 +487,24 @@ int sc_main (int argc, char* argv[]){
 								rede.rt[j]->position = j + 4;
 							}
 						}
-					}else if(router_num == (coreNumbers - 4)){
-						for(int j = 0; j < router_num; j++){
+						for(int n = 0; n < gene.r2; n++){
+							if(j == 0){
+								rede.rt2[j]->position = j+1;
+								rede.rt2[j]->position2 = j+2;
+							}else if(j == 1){
+								rede.rt2[j]->position = j+2;
+								rede.rt2[j]->position2 = j+3;
+							}else if(j == 2){
+								rede.rt2[j]->position = j+3;
+								rede.rt2[j]->position2 = j+4;
+							}else{
+								rede.rt2[j]->position = j + 4;
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 4)){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							if(j == 0){
 								rede.rt[j]->position = j+1;
 								rede.rt[j]->position2 = j+2;
@@ -512,8 +521,27 @@ int sc_main (int argc, char* argv[]){
 								rede.rt[j]->position = j + 5;
 							}
 						}
-					}else if(router_num == (coreNumbers - 5)){
-						for(int j = 0; j < router_num; j++){
+						for(int n = 0; n < gene.r2; n++){
+							if(j == 0){
+								rede.rt2[j]->position = j+1;
+								rede.rt2[j]->position2 = j+2;
+							}else if(j == 1){
+								rede.rt2[j]->position = j+2;
+								rede.rt2[j]->position2 = j+3;
+							}else if(j == 2){
+								rede.rt2[j]->position = j+3;
+								rede.rt2[j]->position2 = j+4;
+							}else if(j == 3){
+								rede.rt2[j]->position = j+4;
+								rede.rt2[j]->position2 = j+5;
+							}else{
+								rede.rt2[j]->position = j + 5;
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 5)){
+					for(int j = 0; j < router_num; j++){
+						for(int m = 0; m < gene.r1; m++){
 							if(j == 0){
 								rede.rt[j]->position = j+1;
 								rede.rt[j]->position2 = j+2;
@@ -533,418 +561,413 @@ int sc_main (int argc, char* argv[]){
 								rede.rt[j]->position = j + 6;
 							}
 						}
-					}
-
-					//Preenchimento da matriz de adjacência
-					for(int i = 0; i < router_num; i++){
-						for(int j = 0; j < router_num; j++){
-							if (i == j){
-								dist[i][j] = 0;
+						for(int n = 0; n < gene.r2; n++){
+							if(j == 0){
+								rede.rt2[j]->position = j+1;
+								rede.rt2[j]->position2 = j+2;
+							}else if(j == 1){
+								rede.rt2[j]->position = j+2;
+								rede.rt2[j]->position2 = j+3;
+							}else if(j == 2){
+								rede.rt2[j]->position = j+3;
+								rede.rt2[j]->position2 = j+4;
+							}else if(j == 3){
+								rede.rt2[j]->position = j+4;
+								rede.rt2[j]->position2 = j+5;
+							}else if(j == 4){
+								rede.rt2[j]->position = j+5;
+								rede.rt2[j]->position2 = j+6;
 							}else{
-								for(int k = 0; k < (router_num + (router_num / 4)); k++){
-									if((rede.conexoes_rede[k].primeiro - 1) == i){
-										if((rede.conexoes_rede[k].segundo - 1) == j){
-											dist[i][j] = 1;
-											dist[j][i] = 1;
-										}
+								rede.rt2[j]->position = j + 6;
+							}
+						}
+					}
+				}
+
+				//Preenchimento da matriz de adjacência
+				for(int i = 0; i < router_num; i++){
+					for(int j = 0; j < router_num; j++){
+						if (i == j){
+							dist[i][j] = 0;
+						}else{
+							for(int k = 0; k < (router_num + (router_num / 4)); k++){
+								if((rede.conexoes_rede[k].primeiro - 1) == i){
+									if((rede.conexoes_rede[k].segundo - 1) == j){
+										dist[i][j] = 1;
+										dist[j][i] = 1;
 									}
 								}
-							}						
-						}
-					}
-
-					for(int i = 0; i < router_num; i++){
-						for(int j = 0; j < router_num; j++){
-							if((i != j) && (dist[i][j] != 1)){
-								dist[i][j] = 100;
 							}
-						}
+						}						
 					}
-
-					//Passagem dos valores das matrizes pro caminho mínimo	
-					cam.floyd(dist, caminho);
-
-
-					//Preenchimento das tabelas de roteamento
-					int router_count[(router_num + (router_num / 4))];
-					int tab_aux[router_num][router_num];
-
-					for(int i = 0; i < (router_num + (router_num / 4)); i++){
-							router_count[i] =  0;
-					}
-
-					for(int i = 0; i < router_num; i++){
-						for(int j = 0; j < router_num; j++){
-							tab_aux[i][j] = 100;
-						}
-					}
-
-					for(int i = 0; i < router_num; i++){
-						for(int j = 0; j < router_num; j++){
-							if(i == j){
-								tab_aux[i][j] = 4;
-							}
-						}
-					}
-
-					for(int i = 0; i < (router_num + (router_num / 4)); i++){
-						if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}/*else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 3)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 3;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}*/else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}/*else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 3)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 3;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}*/else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}/*else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 3)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 3;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 3) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 3;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 3) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 3;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 3) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 3;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 3) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 3)){
-							tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 3;
-							tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 3;
-							router_count[(rede.conexoes_rede[i].primeiro)-1]++;
-							router_count[(rede.conexoes_rede[i].segundo)-1]++;
-						}*/
-					}
-
-					//Tabelas de roteamentp
-					if(router_num == coreNumbers){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-							}
-						}
-					}else if(router_num == (coreNumbers - 1)){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								if(j == 0){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-							}
-						}
-					}else if(router_num == (coreNumbers - 2)){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								if(j == 0){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 2){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-							}
-						}
-					}else if(router_num == (coreNumbers - 3)){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								if(j == 0){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 2){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 3){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-							}
-						}
-					}else if(router_num == (coreNumbers - 4)){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								if(j == 0){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 2){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 3){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 4){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-							}
-						}
-					}
-					else if(router_num == (coreNumbers - 5)){
-						for(int i = 0; i < router_num; i++){	
-							for(int j = 0; j < coreNumbers; j++){
-								if(j == 0){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 2){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 3){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 4){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-								if(j == 5){
-									if(j == i){
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), WEST, dist[i][j]});
-										j = j + 1;
-									}else{
-										rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
-										rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
-										j = j + 1;
-									}					
-								}
-							}
-						}
-					}
-					
-					
-
-
-					sc_start(trafego[0].deadline, SC_NS);
-
-
-
-					//Calculo dos pacotes que chegaram ao destino
-					for(int i = 0; i < trafego.size(); i++){
-						total_packets = total_packets + trafego[i].pacotes;
-					}
-
-					for(int i = 0; i < coreNumbers; i++){
-						deadline_parcial = deadline_parcial + rede.rt[i]-> count;
-					}
-					
-					for(int i = 0; i < coreNumbers; i++){
-						latencia_parcial = latencia_parcial + rede.rt[i]->latencia_rt;
-					}
-
-					string simulacao = "_saida_simulacao.txt";
-
-					deadline = (deadline_parcial * 100) / rede.real_time;
-					latencia_media = (latencia_parcial / total_packets);
-					if(deadline > 100){
-						deadline = 100;
-					}
-
-					string nome_pasta = std::to_string(router_num)+"_Roteadores/"+std::to_string(r1)+"_"+std::to_string(r2)+"/";
-					const char* pasta = (char*) nome_pasta.c_str();
-					mkdir(pasta, 777);
-					saidaDados.open(pasta+std::to_string(a)+simulacao);
-					saidaDados << deadline << endl;
-					saidaDados << latencia_media;// << endl;
-					//saidaDados << router_num;
-					saidaDados.close();
-
-					//latencia_parcial = latencia_parcial - latencia_parcial;
-					//cout << latencia_media << " " << deadline << endl;
-					/*for(int i = 0; i < coreNumbers; i++){
-						cout << rede.rt[0]->tabela[i].destiny << " " << rede.rt[0]->tabela[i].port << " " << rede.rt[0]->tabela[i].hops << endl;
-					}*/
-					/*for (int i = 0; i < coreNumbers; i++){
-			        	for (int j = 0; j < coreNumbers; j++){
-			            	cout << dist[i][j] << " ";
-			        	}
-			        	cout << endl;
-			   		}*/
-
-					}
-
-					gene.fitness();
-
-					gene.crossover();
-
-
 				}
-			string nome_pasta2 = std::to_string(router_num)+"_Conexoes/"+std::to_string(r1)+"_"+std::to_string(r2)+"/";
-			const char* pasta2 = (char*) nome_pasta2.c_str();
-			mkdir(pasta2, 777);		
-			string conex = "_conexoes.txt";
-			for(int i = 0; i < SIZE_POPULATION; i++){
-				saidaDados.open(pasta2+std::to_string(i)+conex);
-				for(int j = 0; j < (router_num + (router_num / 4)); j++){
-					saidaDados << gene.conexoes_rede[i][j].primeiro << " " << gene.conexoes_rede[i][j].segundo << endl;
+
+				for(int i = 0; i < router_num; i++){
+					for(int j = 0; j < router_num; j++){
+						if((i != j) && (dist[i][j] != 1)){
+							dist[i][j] = 100;
+						}
+					}
 				}
+
+				//Passagem dos valores das matrizes pro caminho mínimo	
+				cam.floyd(dist, caminho);
+
+
+				//Preenchimento das tabelas de roteamento
+				int router_count[(router_num + (router_num / 4))];
+				int tab_aux[router_num][router_num];
+
+				for(int i = 0; i < (router_num + (router_num / 4)); i++){
+						router_count[i] =  0;
+				}
+
+				for(int i = 0; i < router_num; i++){
+					for(int j = 0; j < router_num; j++){
+						tab_aux[i][j] = 100;
+					}
+				}
+
+				for(int i = 0; i < router_num; i++){
+					for(int j = 0; j < router_num; j++){
+						if(i == j){
+							tab_aux[i][j] = 4;
+						}
+					}
+				}
+
+				for(int i = 0; i < (router_num + (router_num / 4)); i++){
+					if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 0) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 0;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 1) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 1;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 0)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 0;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 1)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 1;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}else if((router_count[(rede.conexoes_rede[i].primeiro)-1] == 2) && (router_count[(rede.conexoes_rede[i].segundo)-1] == 2)){
+						tab_aux[(rede.conexoes_rede[i].primeiro)-1][(rede.conexoes_rede[i].segundo)-1] = 2;
+						tab_aux[(rede.conexoes_rede[i].segundo)-1][(rede.conexoes_rede[i].primeiro)-1] = 2;
+						router_count[(rede.conexoes_rede[i].primeiro)-1]++;
+						router_count[(rede.conexoes_rede[i].segundo)-1]++;
+					}
+				}
+
+				//Tabelas de roteamentp
+				if(router_num == coreNumbers){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+						}
+					}
+				}else if(router_num == (coreNumbers - 1)){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							if(j == 0){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 2)){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							if(j == 0){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 2){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 3)){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							if(j == 0){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 2){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 3){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+						}
+					}
+				}else if(router_num == (coreNumbers - 4)){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							if(j == 0){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 2){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 3){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 4){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+						}
+					}
+				}
+				else if(router_num == (coreNumbers - 5)){
+					for(int i = 0; i < router_num; i++){	
+						for(int j = 0; j < coreNumbers; j++){
+							if(j == 0){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 2){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 3){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 4){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+							if(j == 5){
+								if(j == i){
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), WEST, dist[i][j]});
+									j = j + 1;
+								}else{
+									rede.table[i].push_back({j, tab_aux[i][caminho[i][j]], dist[i][j]});
+									rede.table[i].push_back({(j+1), tab_aux[i][caminho[i][j]], dist[i][j]});
+									j = j + 1;
+								}					
+							}
+						}
+					}
+				}
+				
+				
+				for(int w = 0; w < router_num; w++){
+					rede.rt[w]->zera_latencia = zera_latencia;
+					rede.rt2[w]->zera_latencia = zera_latencia;
+				}
+
+
+				sc_start(trafego[0].deadline, SC_NS);
+
+				zera_latencia = sc_time_stamp();
+
+
+				//Calculo dos pacotes que chegaram ao destino
+				for(int i = 0; i < trafego.size(); i++){
+					total_packets = total_packets + trafego[i].pacotes;
+				}
+
+				for(int i = 0; i < router_num; i++){
+					deadline_parcial = deadline_parcial + rede.rt[i]->count + rede.rt2[i]->count;
+				}
+				
+				for(int i = 0; i < router_num; i++){
+					latencia_parcial = latencia_parcial + rede.rt[i]->latencia_rt + rede.rt2[i]->latencia_rt;  
+				}
+
+
+				string simulacao = "_saida_simulacao_"+std::to_string(gene.r1)+"-"+std::to_string(gene.r2)+".txt";
+
+				deadline = (deadline_parcial * 100) / rede.real_time;
+				latencia_media = ((latencia_parcial) - (zera_latencia * 4 * router_num) / total_packets);
+				if(deadline > 100){
+					deadline = 100;
+				}
+
+				deadline_parcial = 0;
+				latencia_parcial = conste;
+
+
+
+				
+
+				string nome_pasta = std::to_string(router_num)+"_Roteadores/"+std::to_string(b)+"/";
+				const char* pasta = (char*) nome_pasta.c_str();
+				mkdir(pasta, 777);
+				saidaDados.open(pasta+std::to_string(a)+simulacao);
+				saidaDados << deadline << endl;
+				saidaDados << latencia_media;// << endl;
+				//saidaDados << router_num;
 				saidaDados.close();
-			}	
+
+				//latencia_parcial = latencia_parcial - latencia_parcial;
+				//cout << latencia_media << " " << deadline << endl;
+				/*for(int i = 0; i < coreNumbers; i++){
+					cout << rede.rt[0]->tabela[i].destiny << " " << rede.rt[0]->tabela[i].port << " " << rede.rt[0]->tabela[i].hops << endl;
+				}*/
+				/*for (int i = 0; i < coreNumbers; i++){
+		        	for (int j = 0; j < coreNumbers; j++){
+		            	cout << dist[i][j] << " ";
+		        	}
+		        	cout << endl;
+		   		}*/
+		   		contGene++;
+
+				}
+
+				gene.fitness();
+
+				gene.crossover();
 
 
-			r1 = r1 - 1;
-			r2 = r2 + 1;
+			}
+		string nome_pasta2 = std::to_string(router_num)+"_Conexoes/";
+		const char* pasta2 = (char*) nome_pasta2.c_str();
+		mkdir(pasta2, 777);		
+		string conex = "_conexoes.txt";
+		for(int i = 0; i < SIZE_POPULATION; i++){
+			saidaDados.open(pasta2+std::to_string(i)+conex);
+			for(int j = 0; j < (router_num + (router_num / 4)); j++){
+				saidaDados << gene.conexoes_rede[i][j].primeiro << " " << gene.conexoes_rede[i][j].segundo << endl;
+			}
+			saidaDados.close();
+
 		}
-
 		
 
 

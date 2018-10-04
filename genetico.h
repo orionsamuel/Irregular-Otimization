@@ -17,6 +17,7 @@ public:
 	string grau_latencia[SIZE_POPULATION];
 	char linha[15];
 	int pai[5], mae[5], sub1[5], sub2[5];
+	int r1, r2;
 
 	/*Cria a primeira população de mapeamento*/
 	void firstPopulation(){
@@ -211,6 +212,13 @@ public:
 				conexoes_rede[sub2[c]][i].segundo = filho2[c][i].segundo;
 			}	
 		}
+	}
+
+	void routers(){
+		
+			r1 = r1 - 1;
+			r2 = r2 + 1;
+
 	}
 
 	genetico(){
